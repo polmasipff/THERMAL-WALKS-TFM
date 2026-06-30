@@ -1,0 +1,53 @@
+# =========================================================================
+#  Data is NOT tracked. The repository ships code + figures only.
+#  See data/README.md for how to obtain / regenerate the input datasets.
+# =========================================================================
+
+# --- all data files ---
+data/**
+!data/README.md
+
+# also exclude any stray data dropped elsewhere (notebooks read from ../../data)
+*.csv
+*.parquet
+*.feather
+*.h5
+*.zip
+*.pkl
+*.npz
+# keep the small derived inputs the published figures need to render
+!figures/*.csv
+
+# --- notebook execution artefacts ---
+.ipynb_checkpoints/
+**/.ipynb_checkpoints/
+*-checkpoint.ipynb
+
+# --- pipeline intermediates regenerated locally by some notebooks ---
+notebooks/**/saved_df/
+notebooks/**/csvs/
+notebooks/**/csvs_sens/
+notebooks/**/markov_newT/
+notebooks/**/markov_results/
+notebooks/**/results_onset/
+notebooks/**/transition_outputs/
+notebooks/**/figures/
+notebooks/**/figures_sens/
+
+# --- python ---
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+env/
+.python-version
+
+# --- stray scratch/test files (kept on disk, excluded from the repo) ---
+figures/zztest.txt
+figures/_test_sbs.py
+
+# --- os / editor ---
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
